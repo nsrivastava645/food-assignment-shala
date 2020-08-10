@@ -6,3 +6,5 @@
 6. Login after registration as a user or a restuarant.
 7. Use dummy email and passwords and please do remember your credentials during registration as you would need them for 
     logging in.
+
+Web app live at : <a href="https://rb.gy/mlc9oa">link</a>
