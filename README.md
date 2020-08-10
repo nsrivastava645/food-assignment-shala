@@ -4,3 +4,5 @@
 4. Open any browser and type localhost:3000
 5. Proceed with registration as a restuarant or as a customer.
 6. Login after registration as a user or a restuarant.
+7. Use dummy email and passwords and please do remember your credentials during registration as you would need them for 
+    logging in.
