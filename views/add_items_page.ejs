@@ -1,0 +1,33 @@
+<div class="col-5 forms-container justify-content-center align-items-center" style="text-align:center">
+    <form action="/restuarant/add-item/<%= user.id%>" method="POST">
+        <div class="form-group">
+            <label for="name">Item Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="e.g Kadhi chawal, Dal Makhni" required>
+        </div>
+        <div class="form-group">
+            <label for="about">About the dish</label>
+            <textarea class="form-control" id="about" name="about" placeholder="e.g. Spicy, spice blend, etc" required></textarea>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Veg/Non-Veg</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01" name="isVeg" required>
+                <option selected>Choose Type</option>
+                <option value="true">Veg</option>
+                <option value="false">Non-Veg</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="image">Photo/Snaps url</label>
+            <input type="text" class="form-control" id="image" name="imgSrc" placeholder="http://imageurl.com for e.g" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Cost/Price</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Food Item</button>
+    </form>
+    <br> 
+</div>
+

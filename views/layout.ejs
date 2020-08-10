@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style>
+    .col-5{
+        margin: 10px auto;
+    }
+
+</style>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3 ">
+  <a class="navbar-brand" href="/"><img src="https://image.flaticon.com/icons/svg/3075/3075929.svg" alt="Foodshala" height="30px" width="30px">&nbsp; FoodShala</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <% if(locals.user){%>
+    <% if( locals.user.userType === 0) {%>
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav text-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="/restuarant/addItemsPage">Add Menu Items</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/restuarant/view-menu/<%= locals.user.id %>">View Items</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/restuarant/view-orders/<%= locals.user.id %>">View Orders</a>
+          </li>
+          <li class="nav-item active ml-auto mr-1">
+            <a class="nav-link" href="/restuarant/home" ><%= locals.user.name.toUpperCase() %>'s homepage</a>
+          </li>
+        </ul>
+
+    </div>
+    <a class="nav-link ml-auto mr-1" href="/restuarant/sign-out"><button type="button" class="btn btn-danger ">Logout</button></a>
+
+    <% }else {%>
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav text-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="/customer/order-page">Order Food</a>
+            </li>
+            <li class="nav-item active ml-auto mr-1">
+              <a class="nav-link" href="/customer/home" ><%= locals.user.name.toUpperCase() %>'s homepage</a>
+            </li>
+        </ul>
+    </div>
+      <a class="nav-link ml-auto mr-1" href="/customer/sign-out"><button type="button" class="btn btn-danger ">Logout</button></a>
+    <%} %>
+  <% } else {%>
+    <ul class="navbar-nav ">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Register
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/restuarant/restuarant_registration">Restuarant</a>
+          <a class="dropdown-item" href="/customer/customer_registration">Customer</a>
+        </div>
+
+          
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Login
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/restuarant/restuarant_login">Restuarant</a>
+              <a class="dropdown-item" href="/customer/customer_login">Customer</a>
+            </div>
+      </li>
+    </div>
+    </ul>
+    
+  <%} %>
+
+</nav>
+<!-- Navbar end -->
+
+<%- body %>
+    
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

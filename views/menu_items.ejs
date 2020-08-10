@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Item Name</th>
+        <th scope="col">About Item</th>
+        <th scope="col">Veg/Non-Veg</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    
+
+
+<% for (item of menuItems) {%>
+    <tbody>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= item.about %></td>
+            <td><%= (item.isVeg)? "Veg": "Non-Veg"  %></td>
+            <td><%= item.price %></td>
+
+        </tr>
+      </tbody>
+<% } %>
+
+</table>
+</div>

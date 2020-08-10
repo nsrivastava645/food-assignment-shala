@@ -1,0 +1,33 @@
+<br>
+<div class="container">
+  <div class="card-columns">
+    <%for (item of items) {%>
+      <div class="card ">
+        <img src="<%= item.imgSrc %>" class="card-img-top"  height="200px" width="200px" alt="<%= item.name %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= item.name %></h5>
+          <p class="card-text"><%= item.about %> </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Price: &nbsp;</strong><%= item.price%></li>
+          <li class="list-group-item"><strong>Restuarant: &nbsp;</strong> <%= item.restuarant.name%></li>
+        </ul>
+        <div class="card-body">
+          
+          <% if(user) {%>
+            <% if(user.userType === 0) {%>
+              <a href="/restuarant/order" class="card-link"><button class="btn btn-primary">Order</button></a>
+            <%} else {%>
+              <a href="/customer/order/?itemId=<%= item.id %>&customerId=<%= user.id %>&restuarantId=<%= item.restuarant._id%> " class="card-link"><button class="btn btn-primary">Order</button></a>
+            <%}%>
+          <%}else{%>
+            <a href="/order" class="card-link"><button class="btn btn-primary">Order</button></a>
+          <%}%>
+        </div>
+      </div>
+    
+    
+    
+    <%} %>
+    </div>
+  </div>
